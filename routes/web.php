@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('asd', function (){
+    echo "deneme";
+});
+
+Route::get('/urun/{urunadi}/{id?}', function ($urunadi, $id=0){
+    return "Ürün Adı: $id $urunadi";
+})->name('urun_detay');
+
+Route::get('kampanya', function (){
+   return redirect()->route('urun_detay',['urunadi'=>"Portakal",'id'=>4]);
+});
