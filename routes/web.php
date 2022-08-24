@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnasayfaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AnasayfaController::class, "index"])->name('anasayfa');
+
 Route::get('asd', function (){
     echo "deneme";
 });
